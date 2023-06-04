@@ -1,0 +1,53 @@
+body {
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.label {
+  position: absolute;
+  width: 80px;
+  height: 40px;
+  background-color: lightgray;
+  border-radius: 20px;
+  cursor: pointer;
+}
+.input {
+  visibility: hidden;
+}
+.circle {
+  height: 34px;
+  width: 34px;
+  margin: 3px;
+  background-color: rgb(246, 248, 248);
+  position: absolute;
+  border-radius: 50%;
+  left: 1px;
+  animation: toggleOff 0.4s linear forwards;
+}
+.input:checked + .label {
+  background-color: saddlebrown;
+}
+
+.input:checked + .label .circle {
+  animation: toggleOn 0.4s linear forwards;
+}
+
+@keyframes toggleOn {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(40px);
+  }
+}
+
+@keyframes toggleOff {
+  0% {
+    transform: translateX(40px);
+  }
+  100% {
+    transform: translateX(0px);
+  }
+}
